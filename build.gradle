@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'ru.pr1nkos'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    implementation 'org.slf4j:slf4j-simple:2.0.13'
+    implementation 'org.apache.commons:commons-compress:1.26.1'
+}
+
+application {
+    mainClass = 'ru.pr1nkos.Main'
+}
+
+shadowJar {
+    manifest {
+        attributes 'Main-Class': 'ru.pr1nkos.Main'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
