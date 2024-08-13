@@ -1,4 +1,4 @@
-# PeacockTeamTestTask
+# AnalyzeTextFromGZ
 
 This project is designed to efficiently process large data files using Java 21 and Gradle with Groovy. It leverages multithreading and asynchronous processing to handle large inputs and produces output files based on the processed data.
 
@@ -10,7 +10,7 @@ This project is designed to efficiently process large data files using Java 21 a
 2. **Execute the program**:
    - Use the following command to run the program:
      ```bash
-     java -Xmx1G -jar PeacockTeamTestTask-1.0-SNAPSHOT-all.jar lng.txt.gz
+     java -Xmx1G -jar analyzeTextFromGZ.jar lng.txt.gz
      ```
    - This command processes the `lng.txt.gz` file and produces the output in the `src/main/resources/output` directory.
 
