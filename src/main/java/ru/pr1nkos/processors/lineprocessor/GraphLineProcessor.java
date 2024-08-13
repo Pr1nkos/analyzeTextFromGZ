@@ -5,20 +5,17 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.traverse.BreadthFirstIterator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * The type Graph line processor.
- */
 public class GraphLineProcessor implements LineProcessor {
-    /**
-     * The Graph.
-     */
+
     protected final Graph<String, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
-    /**
-     * The Groups.
-     */
     protected final Map<String, Set<String>> groups = new ConcurrentHashMap<>();
 
     @Override
@@ -63,7 +60,6 @@ public class GraphLineProcessor implements LineProcessor {
         connectedGroup.add(line);
         addGroupToGraph(connectedGroup);
 
-        // Update the group map
         for (String node : connectedGroup) {
             groups.put(node, connectedGroup);
         }
@@ -83,12 +79,6 @@ public class GraphLineProcessor implements LineProcessor {
         }
     }
 
-    /**
-     * Gets connected component.
-     *
-     * @param node the node
-     * @return the connected component
-     */
     protected Set<String> getConnectedComponent(String node) {
         Set<String> component = new HashSet<>();
         BreadthFirstIterator<String, DefaultEdge> iterator = new BreadthFirstIterator<>(graph, node);

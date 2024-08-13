@@ -7,9 +7,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Set;
 
-/**
- * The type Default file writer.
- */
 public class DefaultFileWriter implements FileWriter {
 
     @Override
@@ -27,6 +24,7 @@ public class DefaultFileWriter implements FileWriter {
         groups.sort((g1, g2) -> Integer.compare(g2.size(), g1.size()));
     }
 
+    @Override
     public int writeGroups(List<Set<String>> groups, BufferedWriter writer) throws IOException {
         int groupCount = 0;
         for (Set<String> group : groups) {

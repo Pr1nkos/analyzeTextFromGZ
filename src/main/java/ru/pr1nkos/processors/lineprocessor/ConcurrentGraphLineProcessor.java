@@ -2,12 +2,11 @@ package ru.pr1nkos.processors.lineprocessor;
 
 import ru.pr1nkos.processors.utils.ExecutorUtils;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * The type Concurrent graph line processor.
- */
 public class ConcurrentGraphLineProcessor extends GraphLineProcessor {
     private final ExecutorService graphExecutor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
     private final AtomicInteger counter = new AtomicInteger(0);
@@ -24,9 +23,6 @@ public class ConcurrentGraphLineProcessor extends GraphLineProcessor {
         });
     }
 
-    /**
-     * Shutdown.
-     */
     @Override
     public void shutdown() {
         ExecutorUtils.shutdownAndAwaitTermination(graphExecutor, 1, TimeUnit.HOURS);

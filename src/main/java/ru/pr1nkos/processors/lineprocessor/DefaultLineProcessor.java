@@ -3,9 +3,7 @@ package ru.pr1nkos.processors.lineprocessor;
 import java.util.*;
 import java.util.concurrent.*;
 
-/**
- * The type Default line processor.
- */
+
 class DefaultLineProcessor implements LineProcessor {
     private final ConcurrentMap<String, Set<String>> columnValueGroupMap = new ConcurrentHashMap<>();
     private final ConcurrentMap<Set<String>, Set<String>> groups = new ConcurrentHashMap<>();

@@ -13,22 +13,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/**
- * The type Main.
- */
 public class Main {
-    /**
-     * The entry point of application.
-     *
-     * @param args the input arguments
-     * @throws IOException the io exception
-     */
     public static void main(String[] args) throws IOException {
         long startTime = System.currentTimeMillis();
         String inputFile;
         if (args.length < 1) {
             System.out.println("Использование: java -jar analyzeTextFromGZ.jar {название архива с txt}.gz");
-
             return;
         }
         inputFile = "src/main/resources/input/" + args[0];
@@ -38,8 +28,7 @@ public class Main {
         FileReader fileReader = new GzipFileReader();
 
         ConcurrentFileProcessor processor = new ConcurrentFileProcessor(lineProcessor, fileWriter, fileReader, executor);
-        processor.processFile(inputFile, "src/main/resources/output/output.txt",
-                executor);
+        processor.processFile(inputFile, "src/main/resources/output/output.txt", executor);
 
         try {
             executor.shutdown();
@@ -55,6 +44,5 @@ public class Main {
 
         long endTime = System.currentTimeMillis();
         System.out.println("\nВремя работы программы: " + (endTime - startTime) + " мс");
-        executor.shutdown();
     }
 }
