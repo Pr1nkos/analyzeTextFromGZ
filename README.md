@@ -4,6 +4,7 @@ This project is designed to efficiently process large data files using Java 21 a
 
 ## Metrics
 Avarege execution time of GZ comressed txt: 5462 ms
+
 Avarege execution time of uncomressed txt: 4923 ms
 
 ## How to Run
