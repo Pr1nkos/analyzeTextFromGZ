@@ -27,7 +27,7 @@ public class Main {
         long startTime = System.currentTimeMillis();
         String inputFile;
         if (args.length < 1) {
-            System.out.println("Использование: java -jar PeacockTeamTestTask-1.0-SNAPSHOT-all.jar {название архива с txt}.gz");
+            System.out.println("Использование: java -jar analyzeTextFromGZ.jar {название архива с txt}.gz");
 
             return;
         }
