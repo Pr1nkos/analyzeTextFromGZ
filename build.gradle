@@ -17,6 +17,13 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.13'
     implementation 'org.slf4j:slf4j-simple:2.0.13'
     implementation 'org.apache.commons:commons-compress:1.26.1'
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+// https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation 'com.google.guava:guava:33.2.1-jre'
+// https://mvnrepository.com/artifact/org.jgrapht/jgrapht-core
+    implementation 'org.jgrapht:jgrapht-core:1.5.2'
+
 }
 
 application {
