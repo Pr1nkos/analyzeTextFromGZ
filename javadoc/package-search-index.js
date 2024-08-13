@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.pr1nkos"},{"l":"ru.pr1nkos.processors.fileprocessors"},{"l":"ru.pr1nkos.processors.lineprocessor"},{"l":"ru.pr1nkos.processors.utils"},{"l":"ru.pr1nkos.reader"},{"l":"ru.pr1nkos.writer"}];updateSearchResults();

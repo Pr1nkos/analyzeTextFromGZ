@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.pr1nkos"},{"l":"ru.pr1nkos.file_handler"},{"l":"ru.pr1nkos.grouping_lines"}];updateSearchResults();
