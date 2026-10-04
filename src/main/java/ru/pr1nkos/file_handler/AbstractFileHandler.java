@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +36,10 @@ abstract class AbstractFileHandler implements FileHandler {
 
     @Override
     public void writeFile(String fileName, Map<String, Set<String>> groups) throws IOException {
+        Path parent = Path.of(fileName).toAbsolutePath().getParent();
+        if (parent != null) {
+            Files.createDirectories(parent);
+        }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             List<Map.Entry<String, Set<String>>> sortedGroups = new ArrayList<>(groups.entrySet());
             sortedGroups.sort((a, b) -> b.getValue().size() - a.getValue().size());

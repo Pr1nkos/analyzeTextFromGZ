@@ -40,3 +40,12 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Project
+.idea/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+javadocs/
+src/main/resources/input/*
+!src/main/resources/input/.gitkeep
+src/main/resources/output/

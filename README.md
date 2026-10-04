@@ -9,18 +9,18 @@ Avarege execution time of uncomressed txt: 4923 ms
 
 ## How to Run
 
-1. **Prepare your input files**:
-   - Place your GZ compressed text files in the `src/main/resources/input` directory.
-   - OR place your text files in the `src/main/resources/input` directory.
-
-2. **Execute the program**:
-   - Use the following command to run the program:
-     ```bash
-     java -Xmx1G -jar analyzeTextFromGZ.jar lng.txt.gz
-     OR
-     java -Xmx1G -jar analyzeTextFromGZ.jar lng.txt
-     ```
-   - This command processes the `lng.txt.gz` or `lng.txt` file and produces the output in the `src/main/resources/output` directory.
+1. **Build the project** (JDK 21+):
+   ```bash
+   ./gradlew shadowJar
+   ```
+2. **Prepare your input files**: put a GZ-compressed or plain text file into `src/main/resources/input/`. The input data (`lng-4.txt`, about 80 MB) is not stored in the repository. Lines have the form `"value";"value";"value"`.
+3. **Run**:
+   ```bash
+   java -Xmx1G -jar build/libs/PeacockTeamTestTask-1.0-SNAPSHOT-all.jar lng-4.txt.gz
+   # or
+   java -Xmx1G -jar build/libs/PeacockTeamTestTask-1.0-SNAPSHOT-all.jar lng-4.txt
+   ```
+   The result is written to `src/main/resources/output/output.txt` (the directory is created automatically).
 
 ## Project Structure
 
@@ -40,15 +40,3 @@ Avarege execution time of uncomressed txt: 4923 ms
 ## Design and Architecture
   
 - **Input/Output Management**: The project organizes input and output files systematically, ensuring that input files are processed from the `src/main/resources/input` directory and the results are stored in `src/main/resources/output`.
-
-## Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Pr1nkos/analyzeTextFromGZ.git
-   ```
-2. **Build the project:**
-   ```bash
-   ./gradlew build
-   ```
-4. **Run the project using the instructions provided above.**
